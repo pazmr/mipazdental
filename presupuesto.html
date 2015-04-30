@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Crear presupuesto</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        
+        <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/superhero/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <style type="text/css">
+            .fila{
+                padding-top: 3px;
+                height: 42px;
+                border: 1px solid gray;
+            }
+        </style>
+        <script type="text/javascript" src="/template.js"></script>
+        
+    </head>
+    <body>
+    <div class = "container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>MI PAZ DENTAL</h1>
+                <h2>Dr. Ivan Paz </h2>
+                <form class="form-inline">
+                <div class="input-group col-md-9">
+                  <input type="text" class="form-control" placeholder="Paciente" >
+                </div>
+                <div class="input-group col-md-2">
+                    <select class="form-control" id="tipo">
+                        <option>Adulto</option>
+                        <option>Niño</option>
+                    </select>
+                </div>
+                </form>
+                <br>
+                <div clas="col-md-12">
+                <button type="button" class="btn btn-success hidden-print" id="nuevo">Añadir servicio</button>
+                </div>
+            </div>
+            
+                <div class="panel panel-primary" >
+                    <div class="panel-heading">Presupuesto de tratamientos</div>
+                    <div class="panel-body" id="panel">
+        
+                    </div>
+                    <div class="panel-footer">
+                        <p class="text-right">
+                            TOTAL <span id="total">
+                                0
+                        </span>
+                        </p>
+                        
+                    </div>
+                </div>
+            
+    </div>
+    </body>
+    <script type="text/javascript" >
+        var counter = 1; 
+        var add;
+        
+        $(function() {
+            $("form").submit(function() { return false; });
+        });
+        $( "#nuevo" ).click(function() {
+            
+            if ($( "#panel" ).length==1){
+              $("#panel").append(form_init);
+            }
+            formatted_row = form_row.replace("%data%",counter);
+            $("#panel").append(formatted_row);
+            counter= counter +1 ;
+            
+        });
+        function Remove(elem){
+            val = $(elem).parent().closest("div.form-group").find(".monto").val();
+            add-= val;
+            $('#total').text(add);
+            $(elem).parent().remove();
+        }
+        function myFunction() {
+            
+            add = 0;
+            $(".monto").each(function() {
+                add += Number($(this).val());
+                        
+                $('#total').text(add)
+                    });
+        }
+        
+    </script>
+</html>

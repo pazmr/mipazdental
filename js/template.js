@@ -1,21 +1,22 @@
 
 
-var form_init= '<form class="form-inline" id="formulario"></form>';
+var form_init= '<form class="form-group" id="formulario"></form>';
 var form_row =          
-                        '<div class="form-group" id= "fila ' + '%data%' + '">'+
+                        '<div class="form-group" ' + '%data%' + '">'+
                           '<legend></legend>'+
-                           '<button class="btn-danger pull-right" onclick= "Remove(this)">x</button>'+
-                         '<label for="servicio" class="col-md-1 col-xs-3 control-label">Tratamiento:</label>'+
-                          '<div class="col-md-2 col-xs-8">'+
+                           '<a class="close" onclick= "Remove(this)" >&times;</a>'+
+                           
+                         '<label for="servicio" class="control-label">Tratamiento:</label>'+
+                          
                           '<select class="form-control" id="servicio">'+
                             '<option>Curación</option>'+
                             '<option>Ortodoncia</option>'+
                             '<option>Placa dental</option>'+
                             '<option>Implante</option>'+
                           '</select>'+
-                          '</div>'+
-                          '<label for="pieza_dental" class="col-md-2 col-xs-3 control-label">pieza:</label>'+
-                          '<div class="col-md-2 col-xs-9">'+
+                          
+                          '<label for="pieza_dental" class="control-label">pieza:</label>'+
+                          
                           '<select class="form-control" id="pieza_dental">'+
                             '<option>11</option>'+
                             '<option>12</option>'+
@@ -50,14 +51,14 @@ var form_row =
                             '<option>47</option>'+
                             '<option>48</option>'+
                           '</select>'+
-                          '</div>'+
+                          
                             
-                            '<label class="col-md-2 col-xs-3" for="monto">Monto:</label>'+
-                            '<div class="col-md-2 col-xs-9">'+
+                            '<label class="control-label" for="monto">Monto:</label>'+
+                            
                               '<div class="input-group ">'+
                               '<div class="input-group-addon">Bs</div>'+
                               '<input type="text" class="form-control monto" onchange="myFunction()" placeholder="Monto">'+
-                            '</div>'+
+                            
                             '</div>'+
                             
                         '</div>';
@@ -73,4 +74,7 @@ var tratamientos = {"adultos": {
                                 
                      }
                     };
-                    
+                  
+
+
+
